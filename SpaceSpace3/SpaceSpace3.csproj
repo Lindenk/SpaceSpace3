@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7915F290-1F59-4E04-9BBE-84B8555384F5}</ProjectGuid>
+    <ProjectTypeGuids>{9B831FEF-F496-498F-9FE8-180DA5CB4258};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>SpaceSpace3</RootNamespace>
+    <MonoGamePlatform>Linux</MonoGamePlatform>
+    <AssemblyName>SpaceSpace3</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="MonoGame.Framework" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="nunit.util, Version=2.6.0.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.6.0.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Game1.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Drawable\AnimSprite.cs" />
+    <Compile Include="Drawable\BaseSprite.cs" />
+    <Compile Include="Drawable\Scene.cs" />
+    <Compile Include="Drawable\SpriteSheet.cs" />
+    <Compile Include="Utils\ArrayManip.cs" />
+    <Compile Include="Utils\InputManager.cs" />
+    <Compile Include="Utils\SoundManager.cs" />
+    <Compile Include="Utils\Unittest.cs" />
+    <Compile Include="Utils\Vec2.cs" />
+    <Compile Include="Utils\Vector.cs" />
+    <Compile Include="SpaceSpace3\Entities\Player.cs" />
+    <Compile Include="SpaceSpace3\NonEntities\Door.cs" />
+    <Compile Include="SpaceSpace3\NonEntities\Level.cs" />
+    <Compile Include="SpaceSpace3\NonEntities\Room.cs" />
+    <Compile Include="SpaceSpace3\NonEntities\Unittest.cs" />
+    <Compile Include="SpaceSpace3\NonEntities\Levels\Level1.cs" />
+    <Compile Include="SpaceSpace3\Scenes\SceneIngame.cs" />
+    <Compile Include="ScreenManagerAssets\Menu.cs" />
+    <Compile Include="ScreenManagerAssets\Screen.cs" />
+    <Compile Include="ScreenManagerAssets\Menus\MenuOption.cs" />
+    <Compile Include="ScreenManagerAssets\Menus\TextureButton.cs" />
+    <Compile Include="EventManager\Event.cs" />
+    <Compile Include="EventManager\EventManager.cs" />
+    <Compile Include="EventManager\EventRouter.cs" />
+    <Compile Include="EventManager\Listener.cs" />
+    <Compile Include="EventManager\Events\KeyboardButtonPressed.cs" />
+    <Compile Include="EventManager\Events\KeyboardButtonReleased.cs" />
+    <Compile Include="EventManager\Events\MouseButtonPressed.cs" />
+    <Compile Include="EventManager\Events\MouseButtonReleased.cs" />
+    <Compile Include="EventManager\Events\MousePosition.cs" />
+    <Compile Include="SpaceSpace3\NonEntities\Background.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Content\" />
+    <Folder Include="Drawable\" />
+    <Folder Include="Utils\" />
+    <Folder Include="SpaceSpace3\" />
+    <Folder Include="ScreenManagerAssets\" />
+    <Folder Include="EventManager\" />
+    <Folder Include="Content\Levels\" />
+    <Folder Include="Content\Sound\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Content Include="Icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Test.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\MoarTest.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Sound\Music\WillowAndTheLight.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Levels\Level1.oep">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Levels\StartZone.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Levels\Template.oel">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Tiles.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\background.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\PlaceholderSpritesheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
